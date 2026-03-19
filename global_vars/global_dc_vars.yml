@@ -37,7 +37,7 @@ aaa_settings:
     - name: arista
       privilege: 15
       role: network-admin
-      sha512_password: "{{ ansible_password | password_hash('sha512', salt='arista', rounds=5000) }}"
+      sha512_password: "{{ ansible_password | password_hash('sha512') }}"
       ssh_key: "{{ lookup('ansible.builtin.file', '~/.ssh/id_rsa.pub') }}"
 
 # OOB Management network default gateway.
