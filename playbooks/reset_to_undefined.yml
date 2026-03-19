@@ -1,0 +1,31 @@
+- name: Remove device
+  hosts: cvp
+  connection: local
+  gather_facts: false
+
+  vars:
+    CVP_DEVICES:
+      - fqdn: TelecomB-DB-1
+        parentContainerName: ""
+      - fqdn: TelecomB-DB-2
+        parentContainerName: ""
+      - fqdn: TelecomB-DL-1
+        parentContainerName: ""
+      - fqdn: TelecomB-DL-2
+        parentContainerName: ""
+      - fqdn: TelecomB-DS-1
+        parentContainerName: ""
+      - fqdn: TelecomB-DS-2
+        parentContainerName: ""
+
+  tasks:
+
+    - name: Import Global Vars
+      ansible.builtin.include_vars: "{{ item }}"
+      with_items:
+        - "../global_vars/global_dc_vars.yml"
+
+    - name: remove device
+      arista.cvp.cv_device_v3:
+          devices: '{{CVP_DEVICES}}'
+          state: provisioning_reset

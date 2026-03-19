@@ -4,6 +4,7 @@ TelecomB:
     CVP:
       hosts:
         cvp:
+          ansible_host: 192.168.0.5
     TelecomB_FABRIC:
       children:
         TelecomB_SPINES:

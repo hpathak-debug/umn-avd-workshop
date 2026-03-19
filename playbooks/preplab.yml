@@ -14,3 +14,4 @@
       arista.eos.eos_config:
         src: ../extra_configs/{{inventory_hostname}}.cfg
         replace: line
+

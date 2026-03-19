@@ -21,6 +21,13 @@ ansible-galaxy collection install arista.avd:==5.7.3
 make preplab
 ```
 
+**STEP #3** - Export CVP Service Account token to env variable CV_TOKEN
+
+```bash
+export CV_TOKEN=<insert token>
+```
+
+
 ## Lab Instructions
 
 The instructions to build and deploy this L3LS Multi-site topology are located in the Lab Guide **[here](https://labguides.testdrive.arista.com/2025.3/automation/ci_avd_l3ls/overview/)**.
