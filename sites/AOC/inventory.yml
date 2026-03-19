@@ -9,15 +9,23 @@ AOC:
         AOC_SPINES:
           hosts:
             AOC-DS-1:
+              ansible_host: 192.168.0.10
             AOC-DS-2:
+              ansible_host: 192.168.0.11
         AOC_LEAFS:
           hosts:
             AOC-DV-1:
+              ansible_host: 192.168.0.12
             AOC-DV-2:
+              ansible_host: 192.168.0.13
             AOC-DL-1:
+              ansible_host: 192.168.0.14
             AOC-DL-2:
+              ansible_host: 192.168.0.15
             AOC-DB-1:
+              ansible_host: 192.168.0.100
             AOC-DB-2:
+              ansible_host: 192.168.0.101
     AOC_NETWORK_SERVICES:
       children:
         AOC_SPINES:

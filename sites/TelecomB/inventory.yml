@@ -9,15 +9,23 @@ TelecomB:
         TelecomB_SPINES:
           hosts:
             TelecomB-DS-1:
+              ansible_host: 192.168.0.20
             TelecomB-DS-2:
+              ansible_host: 192.168.0.21
         TelecomB_LEAFS:
           hosts:
             TelecomB-DV-1:
+              ansible_host: 192.168.0.22
             TelecomB-DV-2:
+              ansible_host: 192.168.0.23
             TelecomB-DL-1:
+              ansible_host: 192.168.0.24
             TelecomB-DL-2:
+              ansible_host: 192.168.0.25
             TelecomB-DB-1:
+              ansible_host: 192.168.0.200
             TelecomB-DB-2:
+              ansible_host: 192.168.0.201
     TelecomB_NETWORK_SERVICES:
       children:
         TelecomB_SPINES:
