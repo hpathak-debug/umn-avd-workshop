@@ -65,9 +65,9 @@ l3leaf:
       evpn_gateway:
         evpn_l2:
           enabled: true
-        evpn_l3:
-          enabled: true
-          inter_domain: true
+        # evpn_l3:
+        #   enabled: true
+          # inter_domain: true
       nodes:
         - name: AOC-DB-1
           bgp_as: 65105

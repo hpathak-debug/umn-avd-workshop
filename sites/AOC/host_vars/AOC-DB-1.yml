@@ -1,0 +1,32 @@
+custom_structured_configuration_router_bgp:
+
+  bgp:
+    bestpath:
+      d_path: True
+
+  address_family_evpn:
+    domain_identifier: "1:1"
+    domain_identifier_remote: "2:2"
+    route:
+      import_match_failure_action: discard
+
+    evpn_ethernet_segment:
+      - domain: local
+        identifier: 000a:aaaa:aaaa:1111:1111
+        route_target_import: aa:aa:aa:11:11:11
+      - domain: remote
+        identifier: 000a:aaaa:aaaa:2222:2222
+        route_target_import: aa:aa:aa:22:22:22
+
+  vrfs:
+    - name: PROD
+      rd: "evpn domain all 10.250.1.5:50001"
+      route_targets:
+        import:
+          - address_family: evpn
+            route_targets:
+              - "domain all 50001:50001"
+        export:
+          - address_family: evpn
+            route_targets:
+              - "domain all 50001:50001"

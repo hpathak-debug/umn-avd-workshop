@@ -531,6 +531,7 @@ ASN Notation: asplain
 
 | BGP Tuning |
 | ---------- |
+| bgp bestpath d-path |
 | no bgp default ipv4-unicast |
 | maximum-paths 4 ecmp 4 |
 
@@ -579,6 +580,8 @@ ASN Notation: asplain
 
 #### Router BGP EVPN Address Family
 
+- VPN import pruning is **enabled**
+
 ##### EVPN Peer Groups
 
 | Peer Group | Activate | Route-map In | Route-map Out | Peer-tag In | Peer-tag Out | Encapsulation | Next-hop-self Source Interface |
@@ -590,9 +593,13 @@ ASN Notation: asplain
 
 | Settings | Value |
 | -------- | ----- |
+| Local Domain | 1:1 |
+| Remote Domain | 2:2 |
 | Remote Domain Peer Groups | EVPN-OVERLAY-CORE |
-| L3 Gateway Configured | True |
-| L3 Gateway Inter-domain | True |
+| Local Domain: Ethernet-Segment Identifier | 000a:aaaa:aaaa:1111:1111 |
+| Local Domain: Ethernet-Segment import Route-Target | aa:aa:aa:11:11:11 |
+| Remote Domain: Ethernet-Segment Identifier | 000a:aaaa:aaaa:2222:2222 |
+| Remote Domain: Ethernet-Segment import Route-Target | aa:aa:aa:22:22:22 |
 
 #### Router BGP VLANs
 
@@ -607,7 +614,7 @@ ASN Notation: asplain
 
 | VRF | Route-Distinguisher | Redistribute | Graceful Restart |
 | --- | ------------------- | ------------ | ---------------- |
-| PROD | 10.250.1.5:50001 | connected | - |
+| PROD | evpn domain all 10.250.1.5:50001 | connected | - |
 
 #### Router BGP Device Configuration
 
@@ -617,6 +624,7 @@ router bgp 65105
    router-id 10.250.1.5
    no bgp default ipv4-unicast
    maximum-paths 4 ecmp 4
+   bgp bestpath d-path
    neighbor EVPN-OVERLAY-CORE peer group
    neighbor EVPN-OVERLAY-CORE update-source Loopback0
    neighbor EVPN-OVERLAY-CORE bfd
@@ -686,7 +694,17 @@ router bgp 65105
       neighbor EVPN-OVERLAY-CORE activate
       neighbor EVPN-OVERLAY-CORE domain remote
       neighbor EVPN-OVERLAY-PEERS activate
-      neighbor default next-hop-self received-evpn-routes route-type ip-prefix inter-domain
+      domain identifier 1:1
+      domain identifier 2:2 remote
+      route import match-failure action discard
+      !
+      evpn ethernet-segment domain local
+         identifier 000a:aaaa:aaaa:1111:1111
+         route-target import aa:aa:aa:11:11:11
+      !
+      evpn ethernet-segment domain remote
+         identifier 000a:aaaa:aaaa:2222:2222
+         route-target import aa:aa:aa:22:22:22
    !
    address-family ipv4
       no neighbor EVPN-OVERLAY-CORE activate
@@ -694,9 +712,11 @@ router bgp 65105
       neighbor IPv4-UNDERLAY-PEERS activate
    !
    vrf PROD
-      rd 10.250.1.5:50001
+      rd evpn domain all 10.250.1.5:50001
       route-target import evpn 50001:50001
+      route-target import evpn domain all 50001:50001
       route-target export evpn 50001:50001
+      route-target export evpn domain all 50001:50001
       router-id 10.250.1.5
       redistribute connected
 ```
