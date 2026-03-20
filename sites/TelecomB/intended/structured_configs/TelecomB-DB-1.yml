@@ -170,15 +170,14 @@ router_bgp:
     remote_as: '65200'
     peer: TelecomB-DS-2
     description: TelecomB-DS-2_Loopback0
-  - ip_address: 10.250.1.7
+  - ip_address: 10.250.1.5
     peer_group: EVPN-OVERLAY-CORE
-    remote_as: '65103'
+    remote_as: '65105'
     peer: AOC-DB-1
     description: AOC-DB-1
   - ip_address: 172.16.255.0
     peer_group: IPv4-UNDERLAY-PEERS
-    remote_as: '65103'
-    local_as: '65203'
+    remote_as: '65105'
     peer: AOC-DB-1
     description: AOC-DB-1
   redistribute:

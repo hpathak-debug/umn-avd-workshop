@@ -570,12 +570,12 @@ ASN Notation: asplain
 
 | Neighbor | Remote AS | VRF | Shutdown | Send-community | Maximum-routes | Allowas-in | BFD | RIB Pre-Policy Retain | Route-Reflector Client | Passive | TTL Max Hops |
 | -------- | --------- | --- | -------- | -------------- | -------------- | ---------- | --- | --------------------- | ---------------------- | ------- | ------------ |
-| 10.250.1.7 | 65103 | default | - | Inherited from peer group EVPN-OVERLAY-CORE | Inherited from peer group EVPN-OVERLAY-CORE | - | Inherited from peer group EVPN-OVERLAY-CORE | - | - | - | - |
+| 10.250.1.5 | 65105 | default | - | Inherited from peer group EVPN-OVERLAY-CORE | Inherited from peer group EVPN-OVERLAY-CORE | - | Inherited from peer group EVPN-OVERLAY-CORE | - | - | - | - |
 | 10.250.2.101 | 65200 | default | - | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS | - | Inherited from peer group EVPN-OVERLAY-PEERS | - | - | - | - |
 | 10.250.2.102 | 65200 | default | - | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS | - | Inherited from peer group EVPN-OVERLAY-PEERS | - | - | - | - |
 | 172.16.2.16 | 65200 | default | - | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS | - | - | - | - | - | - |
 | 172.16.2.18 | 65200 | default | - | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS | - | - | - | - | - | - |
-| 172.16.255.0 | 65103 | default | - | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS | - | - | - | - | - | - |
+| 172.16.255.0 | 65105 | default | - | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS | - | - | - | - | - | - |
 
 #### Router BGP EVPN Address Family
 
@@ -634,9 +634,9 @@ router bgp 65205
    neighbor IPv4-UNDERLAY-PEERS password 7 <removed>
    neighbor IPv4-UNDERLAY-PEERS send-community
    neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000
-   neighbor 10.250.1.7 peer group EVPN-OVERLAY-CORE
-   neighbor 10.250.1.7 remote-as 65103
-   neighbor 10.250.1.7 description AOC-DB-1
+   neighbor 10.250.1.5 peer group EVPN-OVERLAY-CORE
+   neighbor 10.250.1.5 remote-as 65105
+   neighbor 10.250.1.5 description AOC-DB-1
    neighbor 10.250.2.101 peer group EVPN-OVERLAY-PEERS
    neighbor 10.250.2.101 remote-as 65200
    neighbor 10.250.2.101 description TelecomB-DS-1_Loopback0
@@ -650,8 +650,7 @@ router bgp 65205
    neighbor 172.16.2.18 remote-as 65200
    neighbor 172.16.2.18 description TelecomB-DS-2_Ethernet7
    neighbor 172.16.255.0 peer group IPv4-UNDERLAY-PEERS
-   neighbor 172.16.255.0 remote-as 65103
-   neighbor 172.16.255.0 local-as 65203 no-prepend replace-as
+   neighbor 172.16.255.0 remote-as 65105
    neighbor 172.16.255.0 description AOC-DB-1
    redistribute connected route-map RM-CONN-2-BGP
    !

@@ -77,8 +77,8 @@ l3leaf:
           evpn_gateway:
             remote_peers:
               - hostname: TelecomB-DB-1
-                bgp_as: 65203
-                ip_address: 10.250.2.7
+                bgp_as: 65205
+                ip_address: 10.250.2.5
         - name: AOC-DB-2
           bgp_as: 65106
           id: 6
@@ -87,5 +87,5 @@ l3leaf:
           evpn_gateway:
             remote_peers:
               - hostname: TelecomB-DB-2
-                bgp_as: 65203
-                ip_address: 10.250.2.8
+                bgp_as: 65206
+                ip_address: 10.250.2.6
