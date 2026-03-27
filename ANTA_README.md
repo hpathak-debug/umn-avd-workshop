@@ -75,7 +75,7 @@ anta nrfu --test VerifyCPUUtilization table
 anta nrfu --test VerifyCPUUtilization --hide success table
 
 # snapshots - Execute list of commands per device and store the output 
-anta exec snapshot --commands-list network-tests/snapshot.yml
+anta exec snapshot --commands-list tests/snapshot.yml -u arista -p <insert lab password> -i sites/AOC/anta_inventory.yml -o SNAPSHOTS
 
 # debug - run commands on a device
 anta debug run-cmd -u arista -p <insert lab password> -i sites/AOC/anta_inventory.yml --device AOC-DB-1 --command "show version"

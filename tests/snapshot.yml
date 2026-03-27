@@ -1,0 +1,6 @@
+---
+json_format:
+  - show version
+text_format:
+  - show ip bgp summary
+  - show bgp evpn summary
