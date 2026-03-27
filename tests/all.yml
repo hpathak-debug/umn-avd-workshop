@@ -1,0 +1,17 @@
+anta.tests.system:
+  - VerifyUptime:
+      minimum: 3600
+  - VerifyReloadCause:
+  - VerifyNTP:
+
+anta.tests.routing:
+  generic:
+    - VerifyRoutingTableEntry:
+        vrf: default
+        routes:
+          - 0.0.0.0
+
+anta.tests.services:
+  - VerifyDNSLookup:
+      domain_names:
+        - www.cv-prod-us-central1-c.arista.io
