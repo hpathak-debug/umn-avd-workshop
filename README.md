@@ -77,8 +77,6 @@ While the documentation references Site1 and Site2, our custom lab environment w
 - Site1 ---> AOC
 - Site2 ---> TelecomB
 
-
-
 ## Hostname Mappings
 
 | Original Hostname | Lab Hostname      | Management0   |
