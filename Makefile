@@ -56,7 +56,7 @@ preplab: ## Deploy Configs via eAPI
 ########################################################
 
 .PHONY: all
-all: build-site-1 build-site-2 deploy-site-1 deploy-site-2
+all: AOC-build TelecomB-build AOC-CVP-deploy TelecomB-CVP-deploy
 
 ########################################################
 # Reset device back to undefined container
