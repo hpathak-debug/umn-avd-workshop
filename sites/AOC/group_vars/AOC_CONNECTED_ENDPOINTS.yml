@@ -14,32 +14,32 @@ port_profiles:
 # ---------------- Endpoint Connectivity ---------------- #
 ###########################################################
 
-# servers:
+servers:
 
-# # --------------------------------------------------------#
-# # AOC RACK1 Endpoints
-# # --------------------------------------------------------#
+# --------------------------------------------------------#
+# AOC RACK1 Endpoints
+# --------------------------------------------------------#
 
-#   - name: AOC-HOST-1                                      # Server name
-#     rack: RACK1                                         # Informational RACK (optional)
-#     adapters:
-#       - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
-#         switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
-#         switches: [ AOC-DV-1, AOC-DV-2 ]                # Switch to connect server (required)
-#         profile: PP-VLAN10                              # Port profile to apply (required)
-#         port_channel:
-#           mode: active
+  - name: AOC-HOST-1                                      # Server name
+    rack: RACK1                                         # Informational RACK (optional)
+    adapters:
+      - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
+        switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
+        switches: [ AOC-DV-1, AOC-DV-2 ]                # Switch to connect server (required)
+        profile: PP-VLAN10                              # Port profile to apply (required)
+        port_channel:
+          mode: active
 
-# # --------------------------------------------------------#
-# # AOC RACK2 Endpoints
-# # --------------------------------------------------------#
+# --------------------------------------------------------#
+# AOC RACK2 Endpoints
+# --------------------------------------------------------#
 
-#   - name: AOC-HOST-2                                      # Server name
-#     rack: RACK2                                         # Informational RACK (optional)
-#     adapters:
-#       - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
-#         switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
-#         switches: [ AOC-DL-1, AOC-DL-2 ]                # Switch to connect server (required)
-#         profile: PP-VLAN20                              # Port profile to apply (required)
-#         port_channel:
-#           mode: active
+  - name: AOC-HOST-2                                      # Server name
+    rack: RACK2                                         # Informational RACK (optional)
+    adapters:
+      - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
+        switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
+        switches: [ AOC-DL-1, AOC-DL-2 ]                # Switch to connect server (required)
+        profile: PP-VLAN20                              # Port profile to apply (required)
+        port_channel:
+          mode: active
