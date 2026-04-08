@@ -1,25 +1,25 @@
-# ---
-# tenants:
-#   - name: TelecomB_FABRIC
-#     mac_vrf_vni_base: 10000
-#     vrfs:
-#       - name: PROD
-#         vrf_vni: 50001
-#         mlag_ibgp_peering_vlan: 3001
-#         svis:
-#           - id: 10
-#             name: 'Ten'
-#             enabled: true
-#             ip_address_virtual: 10.10.10.1/24
-#           - id: 20
-#             name: 'Twenty'
-#             enabled: true
-#             ip_address_virtual: 10.20.20.1/24
-#           - id: 30
-#             name: 'Thirty'
-#             enabled: true
-#             ip_address_virtual: 10.30.30.1/24
-#           - id: 40
-#             name: 'Forty'
-#             enabled: true
-#             ip_address_virtual: 10.40.40.1/24
+---
+tenants:
+  - name: TelecomB_FABRIC
+    mac_vrf_vni_base: 10000
+    vrfs:
+      - name: PROD
+        vrf_vni: 50001
+        mlag_ibgp_peering_vlan: 3001
+        svis:
+          - id: 10
+            name: 'Ten'
+            enabled: true
+            ip_address_virtual: 10.10.10.1/24
+          - id: 20
+            name: 'Twenty'
+            enabled: true
+            ip_address_virtual: 10.20.20.1/24
+          - id: 30
+            name: 'Thirty'
+            enabled: true
+            ip_address_virtual: 10.30.30.1/24
+          - id: 40
+            name: 'Forty'
+            enabled: true
+            ip_address_virtual: 10.40.40.1/24
