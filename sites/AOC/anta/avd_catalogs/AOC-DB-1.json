@@ -284,6 +284,26 @@
             "status": "up"
           },
           {
+            "name": "Vlan10",
+            "status": "up"
+          },
+          {
+            "name": "Vlan20",
+            "status": "up"
+          },
+          {
+            "name": "Vlan30",
+            "status": "up"
+          },
+          {
+            "name": "Vlan40",
+            "status": "up"
+          },
+          {
+            "name": "Vlan3001",
+            "status": "up"
+          },
+          {
             "name": "Vlan4093",
             "status": "up"
           },

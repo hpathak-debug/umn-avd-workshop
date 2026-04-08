@@ -1,0 +1,257 @@
+aaa_authorization:
+  exec:
+    default: local
+aaa_root:
+  disabled: true
+config_end: true
+daemon_terminattr:
+  cvaddrs:
+  - 192.168.0.5:9910
+  cvauth:
+    method: token
+    token_file: /tmp/token
+  cvsourceintf: Management0
+  cvvrf: default
+  disable_aaa: true
+  smashexcludes: ale,flexCounter,hardware,kni,pulse,strata
+dns_domain: atd.lab
+enable_password:
+  disabled: true
+ethernet_interfaces:
+- name: Ethernet2
+  description: P2P_TelecomB-DV-1_Ethernet3
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.2.2/31
+  peer: TelecomB-DV-1
+  peer_interface: Ethernet3
+  peer_type: l3leaf
+  switchport:
+    enabled: false
+- name: Ethernet3
+  description: P2P_TelecomB-DV-2_Ethernet3
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.2.6/31
+  peer: TelecomB-DV-2
+  peer_interface: Ethernet3
+  peer_type: l3leaf
+  switchport:
+    enabled: false
+- name: Ethernet4
+  description: P2P_TelecomB-DL-1_Ethernet3
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.2.10/31
+  peer: TelecomB-DL-1
+  peer_interface: Ethernet3
+  peer_type: l3leaf
+  switchport:
+    enabled: false
+- name: Ethernet5
+  description: P2P_TelecomB-DL-2_Ethernet3
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.2.14/31
+  peer: TelecomB-DL-2
+  peer_interface: Ethernet3
+  peer_type: l3leaf
+  switchport:
+    enabled: false
+- name: Ethernet7
+  description: P2P_TelecomB-DB-1_Ethernet3
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.2.18/31
+  peer: TelecomB-DB-1
+  peer_interface: Ethernet3
+  peer_type: l3leaf
+  switchport:
+    enabled: false
+- name: Ethernet8
+  description: P2P_TelecomB-DB-2_Ethernet3
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.2.22/31
+  peer: TelecomB-DB-2
+  peer_interface: Ethernet3
+  peer_type: l3leaf
+  switchport:
+    enabled: false
+hostname: TelecomB-DS-2
+ip_domain_lookup:
+  source_interfaces:
+  - name: Management0
+ip_name_servers:
+- ip_address: 192.168.0.1
+  vrf: default
+ip_routing: true
+local_users:
+- name: arista
+  privilege: 15
+  role: network-admin
+  sha512_password: $6$arista$cMN/Y7dbj/8Cr6Tf3PIOQrEVflkOa6.mUeNlwDAXapGwUX5cE1RDKiExqm4S9D6KwsAlgwMemqMtK9pY.PAbV0
+  ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCuxi8ysLqGaMZn5ALx7ApGa1Yn6knDj37BEl8U8xqsnji/iVNJ69hXaokqdCfBzlfYXAQK2kZ/sdVASfaRf44plE2vNckoGjd0pcA12w0/XUZ+WlmFPYjYIrbAsEvecJkSqCOpgvm5HxJiPjpL2Su8Rxm5AI7ZzFnivvWaNoaq+w+SlrT7vLMYMHmhGPvnN9SMnui05e0eYehfUZlu8NVqtk/OTHsz4Rs/PgZjAL4jL7ejCWJP7xemVcYeDDQJXNOiNUR6ntGHeK8sxJ/BzBw/ocwplpIft8E9qHl+BaaZKm+wo8D1iA45owx5Qj4ekz3m+iyNUoUYXFEBcEnhDyWJ
+    arista@umn-avd-workshop-1-4cafa1fb-eos
+loopback_interfaces:
+- name: Loopback0
+  description: ROUTER_ID
+  shutdown: false
+  ip_address: 10.250.2.2/32
+management_api_http:
+  enable_https: true
+  enable_vrfs:
+  - name: default
+management_interfaces:
+- name: Management0
+  description: OOB_MANAGEMENT
+  shutdown: false
+  vrf: default
+  ip_address: 192.168.0.21/24
+  type: oob
+  gateway: 192.168.0.1
+metadata:
+  is_deployed: true
+  platform: cEOS
+  fabric_name: TelecomB_FABRIC
+ntp:
+  local_interface:
+    name: Management0
+    vrf: default
+  servers:
+  - name: 192.168.0.1
+    iburst: true
+    preferred: true
+    vrf: default
+prefix_lists:
+- name: PL-LOOPBACKS-EVPN-OVERLAY
+  sequence_numbers:
+  - sequence: 10
+    action: permit 10.250.2.0/24 eq 32
+route_maps:
+- name: RM-CONN-2-BGP
+  sequence_numbers:
+  - sequence: 10
+    type: permit
+    match:
+    - ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
+router_bfd:
+  multihop:
+    interval: 300
+    min_rx: 300
+    multiplier: 3
+router_bgp:
+  as: '65200'
+  router_id: 10.250.2.2
+  maximum_paths:
+    paths: 4
+    ecmp: 4
+  bgp:
+    default:
+      ipv4_unicast: false
+  peer_groups:
+  - name: IPv4-UNDERLAY-PEERS
+    type: ipv4
+    password: 7x4B4rnJhZB438m9+BrBfQ==
+    send_community: all
+    maximum_routes: 12000
+  - name: EVPN-OVERLAY-PEERS
+    type: evpn
+    next_hop_unchanged: true
+    update_source: Loopback0
+    bfd: true
+    ebgp_multihop: 3
+    password: Q4fqtbqcZ7oQuKfuWtNGRQ==
+    send_community: all
+    maximum_routes: 0
+  neighbors:
+  - ip_address: 172.16.2.3
+    peer_group: IPv4-UNDERLAY-PEERS
+    remote_as: '65201'
+    peer: TelecomB-DV-1
+    description: TelecomB-DV-1_Ethernet3
+  - ip_address: 172.16.2.7
+    peer_group: IPv4-UNDERLAY-PEERS
+    remote_as: '65201'
+    peer: TelecomB-DV-2
+    description: TelecomB-DV-2_Ethernet3
+  - ip_address: 172.16.2.11
+    peer_group: IPv4-UNDERLAY-PEERS
+    remote_as: '65202'
+    peer: TelecomB-DL-1
+    description: TelecomB-DL-1_Ethernet3
+  - ip_address: 172.16.2.15
+    peer_group: IPv4-UNDERLAY-PEERS
+    remote_as: '65202'
+    peer: TelecomB-DL-2
+    description: TelecomB-DL-2_Ethernet3
+  - ip_address: 172.16.2.19
+    peer_group: IPv4-UNDERLAY-PEERS
+    remote_as: '65203'
+    peer: TelecomB-DB-1
+    description: TelecomB-DB-1_Ethernet3
+  - ip_address: 172.16.2.23
+    peer_group: IPv4-UNDERLAY-PEERS
+    remote_as: '65203'
+    peer: TelecomB-DB-2
+    description: TelecomB-DB-2_Ethernet3
+  - ip_address: 10.250.2.7
+    peer_group: EVPN-OVERLAY-PEERS
+    remote_as: '65203'
+    peer: TelecomB-DB-1
+    description: TelecomB-DB-1_Loopback0
+  - ip_address: 10.250.2.8
+    peer_group: EVPN-OVERLAY-PEERS
+    remote_as: '65203'
+    peer: TelecomB-DB-2
+    description: TelecomB-DB-2_Loopback0
+  - ip_address: 10.250.2.5
+    peer_group: EVPN-OVERLAY-PEERS
+    remote_as: '65202'
+    peer: TelecomB-DL-1
+    description: TelecomB-DL-1_Loopback0
+  - ip_address: 10.250.2.6
+    peer_group: EVPN-OVERLAY-PEERS
+    remote_as: '65202'
+    peer: TelecomB-DL-2
+    description: TelecomB-DL-2_Loopback0
+  - ip_address: 10.250.2.3
+    peer_group: EVPN-OVERLAY-PEERS
+    remote_as: '65201'
+    peer: TelecomB-DV-1
+    description: TelecomB-DV-1_Loopback0
+  - ip_address: 10.250.2.4
+    peer_group: EVPN-OVERLAY-PEERS
+    remote_as: '65201'
+    peer: TelecomB-DV-2
+    description: TelecomB-DV-2_Loopback0
+  redistribute:
+    connected:
+      enabled: true
+      route_map: RM-CONN-2-BGP
+  address_family_evpn:
+    peer_groups:
+    - name: EVPN-OVERLAY-PEERS
+      activate: true
+  address_family_ipv4:
+    peer_groups:
+    - name: IPv4-UNDERLAY-PEERS
+      activate: true
+    - name: EVPN-OVERLAY-PEERS
+      activate: false
+service_routing_protocols_model: multi-agent
+spanning_tree:
+  mode: none
+static_routes:
+- vrf: default
+  prefix: 0.0.0.0/0
+  next_hop: 192.168.0.1
+transceiver_qsfp_default_mode_4x10: true
+vlan_internal_order:
+  allocation: ascending
+  range:
+    beginning: 1006
+    ending: 1199
+vrfs:
+- name: default
+  ip_routing: false
