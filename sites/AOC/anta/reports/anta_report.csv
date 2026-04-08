@@ -1,0 +1,277 @@
+Device,Test Name,Test Status,Message(s),Test description,Test category
+AOC-DB-1,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DB-1,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DB-1,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DB-1,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DB-1,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DB-1,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DB-1,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DB-1,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DB-1,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DB-1,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DB-1,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DB-1,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in port channels.,Interfaces
+AOC-DB-1,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DB-1,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DB-1,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DB-1,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DB-1,VerifyInterfacesStatus,failure,"Interface: Vxlan1 - Status mismatch - Expected: up/up, Actual: down/down",Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DB-1,VerifyPortChannels,success,,Verifies there are no inactive ports in port channels.,Interfaces
+AOC-DB-1,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DB-1,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:35 7caa94ba3e0b NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DB-1,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+AOC-DB-1,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+AOC-DB-1,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+AOC-DB-1,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DB-1,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DB-1,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DB-1,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DB-1,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DB-1,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DB-1,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 88.05%,Verifies whether the memory utilization is below 75%.,System
+AOC-DB-1,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DB-1,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DB-1,VerifyVxlanConfigSanity,failure,Vxlan Category: localVtep - Config sanity check is not passing,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+AOC-DB-2,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DB-2,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DB-2,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DB-2,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DB-2,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DB-2,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DB-2,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DB-2,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DB-2,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DB-2,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DB-2,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DB-2,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in port channels.,Interfaces
+AOC-DB-2,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DB-2,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DB-2,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DB-2,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DB-2,VerifyInterfacesStatus,failure,"Interface: Vxlan1 - Status mismatch - Expected: up/up, Actual: down/down",Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DB-2,VerifyPortChannels,success,,Verifies there are no inactive ports in port channels.,Interfaces
+AOC-DB-2,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DB-2,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:37 1faff2844fad NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DB-2,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+AOC-DB-2,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+AOC-DB-2,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+AOC-DB-2,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DB-2,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DB-2,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DB-2,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DB-2,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DB-2,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DB-2,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 87.93%,Verifies whether the memory utilization is below 75%.,System
+AOC-DB-2,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DB-2,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DB-2,VerifyVxlanConfigSanity,failure,Vxlan Category: localVtep - Config sanity check is not passing,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+AOC-DL-1,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DL-1,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DL-1,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DL-1,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DL-1,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DL-1,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DL-1,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DL-1,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DL-1,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DL-1,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DL-1,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DL-1,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in port channels.,Interfaces
+AOC-DL-1,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DL-1,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DL-1,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DL-1,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DL-1,VerifyInterfacesStatus,failure,"Interface: Vxlan1 - Status mismatch - Expected: up/up, Actual: down/down",Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DL-1,VerifyPortChannels,success,,Verifies there are no inactive ports in port channels.,Interfaces
+AOC-DL-1,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DL-1,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:27 eab706e813b9 NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DL-1,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+AOC-DL-1,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+AOC-DL-1,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+AOC-DL-1,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DL-1,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DL-1,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DL-1,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DL-1,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DL-1,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DL-1,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 89.27%,Verifies whether the memory utilization is below 75%.,System
+AOC-DL-1,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DL-1,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DL-1,VerifyVxlanConfigSanity,failure,Vxlan Category: localVtep - Config sanity check is not passing,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+AOC-DL-2,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DL-2,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DL-2,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DL-2,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DL-2,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DL-2,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DL-2,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DL-2,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DL-2,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DL-2,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DL-2,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DL-2,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in port channels.,Interfaces
+AOC-DL-2,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DL-2,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DL-2,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DL-2,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DL-2,VerifyInterfacesStatus,failure,"Interface: Vxlan1 - Status mismatch - Expected: up/up, Actual: down/down",Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DL-2,VerifyPortChannels,success,,Verifies there are no inactive ports in port channels.,Interfaces
+AOC-DL-2,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DL-2,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:28 aa39105a93ff NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DL-2,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+AOC-DL-2,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+AOC-DL-2,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+AOC-DL-2,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DL-2,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DL-2,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DL-2,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DL-2,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DL-2,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DL-2,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 88.29%,Verifies whether the memory utilization is below 75%.,System
+AOC-DL-2,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DL-2,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DL-2,VerifyVxlanConfigSanity,failure,Vxlan Category: localVtep - Config sanity check is not passing,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+AOC-DS-1,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DS-1,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DS-1,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DS-1,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DS-1,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DS-1,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DS-1,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DS-1,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DS-1,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DS-1,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DS-1,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DS-1,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DS-1,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DS-1,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DS-1,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DS-1,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DS-1,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DS-1,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:19 da70be74cfb4 NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DS-1,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DS-1,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DS-1,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DS-1,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DS-1,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DS-1,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DS-1,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 88.03%,Verifies whether the memory utilization is below 75%.,System
+AOC-DS-1,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DS-1,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DS-2,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DS-2,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DS-2,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DS-2,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DS-2,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DS-2,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DS-2,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DS-2,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DS-2,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DS-2,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DS-2,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DS-2,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DS-2,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DS-2,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DS-2,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DS-2,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DS-2,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DS-2,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:20 c3be75d40efb NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DS-2,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DS-2,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DS-2,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DS-2,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DS-2,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DS-2,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DS-2,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 89.21%,Verifies whether the memory utilization is below 75%.,System
+AOC-DS-2,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DS-2,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DV-1,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DV-1,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DV-1,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DV-1,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DV-1,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DV-1,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DV-1,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DV-1,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DV-1,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DV-1,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DV-1,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DV-1,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in port channels.,Interfaces
+AOC-DV-1,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DV-1,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DV-1,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DV-1,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DV-1,VerifyInterfacesStatus,failure,"Interface: Vxlan1 - Status mismatch - Expected: up/up, Actual: down/down",Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DV-1,VerifyPortChannels,success,,Verifies there are no inactive ports in port channels.,Interfaces
+AOC-DV-1,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DV-1,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:22 47d0f7603957 NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DV-1,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+AOC-DV-1,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+AOC-DV-1,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+AOC-DV-1,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DV-1,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DV-1,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DV-1,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DV-1,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DV-1,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DV-1,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 89.22%,Verifies whether the memory utilization is below 75%.,System
+AOC-DV-1,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DV-1,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DV-1,VerifyVxlanConfigSanity,failure,Vxlan Category: localVtep - Config sanity check is not passing,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+AOC-DV-2,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+AOC-DV-2,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+AOC-DV-2,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+AOC-DV-2,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+AOC-DV-2,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+AOC-DV-2,VerifyReachability,success,,Verifies reachability to BGP neighbors with an update source configured.,Connectivity
+AOC-DV-2,VerifyEnvironmentCooling,skipped,VerifyEnvironmentCooling test is not supported on cEOSLab,Verifies the status of power supply fans and all fan trays.,Hardware
+AOC-DV-2,VerifyEnvironmentPower,skipped,VerifyEnvironmentPower test is not supported on cEOSLab,Verifies the power supplies state and input voltage.,Hardware
+AOC-DV-2,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+AOC-DV-2,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+AOC-DV-2,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+AOC-DV-2,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in port channels.,Interfaces
+AOC-DV-2,VerifyInterfaceDiscards,success,,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+AOC-DV-2,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+AOC-DV-2,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+AOC-DV-2,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+AOC-DV-2,VerifyInterfacesStatus,failure,"Interface: Vxlan1 - Status mismatch - Expected: up/up, Actual: down/down",Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+AOC-DV-2,VerifyPortChannels,success,,Verifies there are no inactive ports in port channels.,Interfaces
+AOC-DV-2,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+AOC-DV-2,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Apr  8 14:01:24 2a0545142e97 NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+AOC-DV-2,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+AOC-DV-2,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+AOC-DV-2,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+AOC-DV-2,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+AOC-DV-2,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+AOC-DV-2,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+AOC-DV-2,VerifyCoredump,success,,Verifies there are no core dump files.,System
+AOC-DV-2,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+AOC-DV-2,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+AOC-DV-2,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 89.22%,Verifies whether the memory utilization is below 75%.,System
+AOC-DV-2,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+AOC-DV-2,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+AOC-DV-2,VerifyVxlanConfigSanity,failure,Vxlan Category: localVtep - Config sanity check is not passing,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
