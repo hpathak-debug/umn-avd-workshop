@@ -56,6 +56,16 @@ ethernet_interfaces:
   peer_type: spine
   switchport:
     enabled: false
+- name: Ethernet5
+  description: P2P_AOC-DB-2_Ethernet5
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.255.3/31
+  peer: AOC-DB-2
+  peer_interface: Ethernet5
+  peer_type: other
+  switchport:
+    enabled: false
 hostname: TelecomB-DB-2
 ip_domain_lookup:
   source_interfaces:
@@ -220,6 +230,11 @@ router_bgp:
     remote_as: '65200'
     peer: TelecomB-DS-2
     description: TelecomB-DS-2_Loopback0
+  - ip_address: 172.16.255.2
+    peer_group: IPv4-UNDERLAY-PEERS
+    remote_as: '65103'
+    peer: AOC-DB-2
+    description: AOC-DB-2
   redistribute:
     connected:
       enabled: true
