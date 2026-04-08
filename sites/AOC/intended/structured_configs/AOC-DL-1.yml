@@ -276,6 +276,14 @@ router_bgp:
       - 10040:10040
     redistribute_routes:
     - learned
+  - id: 50
+    tenant: AOC_FABRIC
+    rd: 10.250.1.5:10050
+    route_targets:
+      both:
+      - 10050:10050
+    redistribute_routes:
+    - learned
   address_family_evpn:
     peer_groups:
     - name: EVPN-OVERLAY-PEERS
@@ -357,6 +365,12 @@ vlan_interfaces:
   vrf: PROD
   ip_address_virtual: 10.40.40.1/24
   tenant: AOC_FABRIC
+- name: Vlan50
+  description: Fifty
+  shutdown: false
+  vrf: PROD
+  ip_address_virtual: 10.50.50.1/24
+  tenant: AOC_FABRIC
 - name: Vlan3001
   description: MLAG_L3_VRF_PROD
   shutdown: false
@@ -393,6 +407,9 @@ vlans:
 - id: 40
   name: Forty
   tenant: AOC_FABRIC
+- id: 50
+  name: Fifty
+  tenant: AOC_FABRIC
 - id: 3001
   name: MLAG_L3_VRF_PROD
   trunk_groups:
@@ -420,6 +437,8 @@ vxlan_interface:
         vni: 10030
       - id: 40
         vni: 10040
+      - id: 50
+        vni: 10050
       vrfs:
       - name: PROD
         vni: 50001
