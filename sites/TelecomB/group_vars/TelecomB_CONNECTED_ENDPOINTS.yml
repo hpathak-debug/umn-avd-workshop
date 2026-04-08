@@ -14,32 +14,32 @@ port_profiles:
 # ---------------- Endpoint Connectivity ---------------- #
 ###########################################################
 
-# servers:
+servers:
 
-# # --------------------------------------------------------#
-# # TelecomB RACK1 Endpoints
-# # --------------------------------------------------------#
+# --------------------------------------------------------#
+# TelecomB RACK1 Endpoints
+# --------------------------------------------------------#
 
-#   - name: TelecomB-HOST-1                               # Server name
-#     rack: RACK1                                         # Informational RACK (optional)
-#     adapters:
-#       - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
-#         switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
-#         switches: [ TelecomB-DV-1,TelecomB-DV-2 ]       # Switch to connect server (required)
-#         profile: PP-VLAN30                              # Port profile to apply (required)
-#         port_channel:
-#           mode: active
+  - name: TelecomB-HOST-1                               # Server name
+    rack: RACK1                                         # Informational RACK (optional)
+    adapters:
+      - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
+        switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
+        switches: [ TelecomB-DV-1,TelecomB-DV-2 ]       # Switch to connect server (required)
+        profile: PP-VLAN30                              # Port profile to apply (required)
+        port_channel:
+          mode: active
 
-# # --------------------------------------------------------#
-# # TelecomB RACK2 Endpoints
-# # --------------------------------------------------------#
+# --------------------------------------------------------#
+# TelecomB RACK2 Endpoints
+# --------------------------------------------------------#
 
-#   - name: TelecomB-HOST-2                               # Server name
-#     rack: RACK2                                         # Informational RACK (optional)
-#     adapters:
-#       - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
-#         switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
-#         switches: [ TelecomB-DL-1, TelecomB-DL-2 ]      # Switch to connect server (required)
-#         profile: PP-VLAN40                              # Port profile to apply (required)
-#         port_channel:
-#           mode: active
+  - name: TelecomB-HOST-2                               # Server name
+    rack: RACK2                                         # Informational RACK (optional)
+    adapters:
+      - endpoint_ports: [ eth1, eth2 ]                  # Server port to connect (optional)
+        switch_ports: [ Ethernet4, Ethernet4 ]          # Switch port to connect server (required)
+        switches: [ TelecomB-DL-1, TelecomB-DL-2 ]      # Switch to connect server (required)
+        profile: PP-VLAN40                              # Port profile to apply (required)
+        port_channel:
+          mode: active
